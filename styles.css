@@ -1,38 +1,39 @@
 
 body {
-  margin: 0;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-  overflow: hidden;
-  font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    background: black;
+    color: white;
 }
-
-.universe {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('espacio.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+    animation: movimientoEstrellas 60s linear infinite;
 }
-
-.card {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-2deg);
-  background: rgba(255, 255, 255, 0.9);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-  max-width: 500px;
-  animation: float 6s ease-in-out infinite;
+.carta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    transform: translate(-50%, -50%) rotate(0deg);
+    animation: girar 20s infinite linear;
+    color: #000;
+    text-align: center;
 }
-
-@keyframes float {
-  0% { transform: translate(-50%, -50%) rotate(-2deg); }
-  50% { transform: translate(-50%, -53%) rotate(2deg); }
-  100% { transform: translate(-50%, -50%) rotate(-2deg); }
+@keyframes movimientoEstrellas {
+    0% { background-position: 0 0; }
+    100% { background-position: -1000px 1000px; }
 }
-
-.message {
-  font-size: 1.1rem;
-  color: #333;
-  text-align: center;
+@keyframes girar {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
