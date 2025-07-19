@@ -1,0 +1,38 @@
+
+body {
+  margin: 0;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  overflow: hidden;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.universe {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-2deg);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  max-width: 500px;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translate(-50%, -50%) rotate(-2deg); }
+  50% { transform: translate(-50%, -53%) rotate(2deg); }
+  100% { transform: translate(-50%, -50%) rotate(-2deg); }
+}
+
+.message {
+  font-size: 1.1rem;
+  color: #333;
+  text-align: center;
+}
